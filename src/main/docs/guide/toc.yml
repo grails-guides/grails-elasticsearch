@@ -1,0 +1,19 @@
+training:
+  title: Training
+gettingStarted: 
+  title: Getting Started
+  howto: How to complete the guide
+writing:
+  title: Writing the Guide
+  docker: Install ElasticSearch via Docker
+  install: Configure ElasticSearch plugin
+  logchanges: ElasticSearch logs
+  domain: Create a Domain Class
+  bootstrap: Save Initial Data
+  service: Create Service
+  controller: Create Controller
+  jsonview: JSON View
+  functionalTest: Functional Test
+  summary: Summary
+helpWithGrails:
+  title: Help with Grails  

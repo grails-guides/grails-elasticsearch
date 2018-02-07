@@ -2,6 +2,8 @@ training:
   title: Training
 gettingStarted: 
   title: Getting Started
+  esfeatures: Features
+  requirements: What will you need
   howto: How to complete the guide
 writing:
   title: Writing the Guide

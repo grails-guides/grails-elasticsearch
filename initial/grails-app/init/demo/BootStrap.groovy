@@ -1,5 +1,7 @@
 package demo
 
+import grails.util.BuildSettings
+import grails.util.Environment
 import groovy.transform.CompileStatic
 
 @CompileStatic
@@ -28,9 +30,13 @@ class BootStrap {
     BookService bookService
 
     def init = { servletContext ->
-        for (Map<String, String> bookInfo : (GRAILS_BOOKS + GROOVY_BOOKS)) {
-            bookService.save(bookInfo.title, bookInfo.author, bookInfo.about, bookInfo.href, bookInfo.image)
+        def targetDir = BuildSettings.TARGET_DIR
+        if (Environment.isDevelopmentMode() && targetDir != null) {
+            for (Map<String, String> bookInfo : (GRAILS_BOOKS + GROOVY_BOOKS)) {
+                bookService.save(bookInfo.title, bookInfo.author, bookInfo.about, bookInfo.href, bookInfo.image)
+            }
         }
+
     }
 
 }

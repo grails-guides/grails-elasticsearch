@@ -1,12 +1,13 @@
 package demo
 
-import grails.testing.mixin.integration.Integration
-import grails.transaction.*
-import static grails.web.http.HttpHeaders.*
-import static org.springframework.http.HttpStatus.*
-import spock.lang.*
-import geb.spock.*
+import geb.spock.GebSpec
+import grails.converters.JSON
+import grails.plugins.elasticsearch.ElasticSearchAdminService
 import grails.plugins.rest.client.RestBuilder
+import grails.testing.mixin.integration.Integration
+import grails.transaction.Rollback
+
+import static org.springframework.http.HttpStatus.*
 
 @Integration
 @Rollback
@@ -17,15 +18,27 @@ class BookFunctionalSpec extends GebSpec {
     }
 
     String getResourcePath() {
-        assert false, "TODO: provide the path to your resource. Example: \"${baseUrl}/books\""
+        "${baseUrl}/book"
     }
 
     Closure getValidJson() {{->
-        assert false, "TODO: provide valid JSON"
+        JSON.parse('''{
+  "about": "Learn how a complete greenfield application can be implemented quickly and efficiently with Grails 3 using profiles and plugins. Use the sample application that accompanies the book as an example.",
+  "title": "Grails 3 - Step by Step",
+  "image": "books/grails_3_step_by_step.png",
+  "href": "https://grailsthreebook.com/",
+  "author": "Cristian Olaru"
+}
+''')
     }}
 
-    Closure getInvalidJson() {{->        
-        assert false, "TODO: provide invalid JSON"
+    Closure getInvalidJson() {{->
+        JSON.parse('''{
+  "image": "books/test.png",
+  "href": "https://test.com/",
+  "name": "Test"
+}
+''')
     }}    
 
     void "Test the index action"() {
@@ -124,7 +137,7 @@ class BookFunctionalSpec extends GebSpec {
 
         when:"When the delete action is executed on an unknown instance"
         def id = response.json.id
-        response = restBuilder.delete("$resourcePath/99999") 
+        response = restBuilder.delete("$resourcePath")
 
         then:"The response is correct"
         response.status == NOT_FOUND.value()
@@ -135,5 +148,24 @@ class BookFunctionalSpec extends GebSpec {
         then:"The response is correct"
         response.status == NO_CONTENT.value()        
         !Book.get(id)
-    }    
+    }
+
+    void "Test the search action correctly searches"() {
+        when:"The save action is executed with valid data"
+        def response = restBuilder.post(resourcePath) {
+            json validJson
+        }
+        def id = response.json.id
+
+        then:"The response is correct"
+        response.status == CREATED.value()
+        response.json.id
+
+        when: "The search action is executed to search for the instance"
+        response = restBuilder.get("$resourcePath/search/grails")
+
+        then: "The list is returned with only one instance"
+        response.json.totalCount
+        response.json.results
+    }
 }

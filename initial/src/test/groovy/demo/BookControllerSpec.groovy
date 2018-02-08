@@ -1,19 +1,25 @@
 package demo
 
-import spock.lang.*
-import static org.springframework.http.HttpStatus.*
-import grails.validation.ValidationException
-import grails.testing.web.controllers.ControllerUnitTest
+import grails.plugins.elasticsearch.ElasticSearchService
 import grails.testing.gorm.DomainUnitTest
+import grails.testing.web.controllers.ControllerUnitTest
+import grails.validation.ValidationException
+import spock.lang.Specification
+
+import static org.springframework.http.HttpStatus.*
 
 class BookControllerSpec extends Specification implements ControllerUnitTest<BookController>, DomainUnitTest<Book> {
 
     def populateValidParams(params) {
         assert params != null
 
-        // TODO: Populate valid properties like...
-        //params["name"] = 'someValidName'
-        assert false, "TODO: Provide a populateValidParams() implementation for this generated test suite"
+        params["title"] = 'Sample'
+        params["author"] = 'test'
+        params["about"] = '''This is sample book for testing purpose.
+'''
+        params["href"] = 'https://grails.org'
+        params["image"] = 'images/grails_logo.svg'
+
     }
 
     void "Test the index action returns the correct response"() {
@@ -79,7 +85,7 @@ class BookControllerSpec extends Specification implements ControllerUnitTest<Boo
 
         then:
         response.status == UNPROCESSABLE_ENTITY.value()
-        response.json.errors
+        response.json._embedded.errors
     }
 
     void "Test the show action with a null id"() {
@@ -98,7 +104,7 @@ class BookControllerSpec extends Specification implements ControllerUnitTest<Boo
     void "Test the show action with a valid id"() {
         given:
         controller.bookService = Mock(BookService) {
-            1 * get(2) >> new Book()
+            1 * get(2) >> new Book(title: 'Sample')
         }
 
         when:"A domain instance is passed to the show action"
@@ -157,7 +163,7 @@ class BookControllerSpec extends Specification implements ControllerUnitTest<Boo
 
         then:
         response.status == UNPROCESSABLE_ENTITY.value()
-        response.json.errors
+        response.json._embedded.errors
     }
 
     void "Test the delete action with a null instance"() {
@@ -183,5 +189,21 @@ class BookControllerSpec extends Specification implements ControllerUnitTest<Boo
 
         then:
         response.status == NO_CONTENT.value()
+    }
+
+    void "Test search action with valid query"() {
+        given:
+        controller.elasticSearchService = Mock(ElasticSearchService) {
+            1 * search('grails', [indices: Book, types: Book, score: true]) >> [total: 1, searchResults: [[title: 'Sample Book']], scores: [['1': '0.1231313']]]
+        }
+
+        when:
+        request.contentType = JSON_CONTENT_TYPE
+        request.method = 'GET'
+        controller.search('grails')
+
+        then:
+        response.status == OK.value()
+        response.json
     }
 }

@@ -7,9 +7,9 @@ gettingStarted:
   howto: How to complete the guide
 writing:
   title: Writing the Guide
-  docker: Install ElasticSearch via Docker
+  docker: Install Elasticsearch via Docker
   install: Configure ElasticSearch plugin
-  logchanges: ElasticSearch logs
+  logchanges: Elasticsearch logs
   domain: Create a Domain Class
   bootstrap: Save Initial Data
   service: Create Service

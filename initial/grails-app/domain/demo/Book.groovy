@@ -1,8 +1,5 @@
 package demo
 
-import grails.compiler.GrailsCompileStatic
-
-@GrailsCompileStatic
 class Book {
 
     String title
@@ -15,6 +12,11 @@ class Book {
     static transients = ['imageUrl']
     static mapping = {
         about type: 'text'
+    }
+    static searchable = {
+        title boost: 2.0  // <1>
+        about boost: 1.0  // <2>
+        except = ['href', 'image', 'imageUrl'] // <3>
     }
 
     String getImageUrl() {

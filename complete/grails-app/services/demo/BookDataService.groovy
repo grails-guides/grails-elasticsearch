@@ -6,5 +6,5 @@ import groovy.transform.CompileStatic
 @CompileStatic
 @Service(Book)
 interface BookDataService {
-    Book save(String name, String about)
+    Book save(String title, String about)
 }

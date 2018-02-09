@@ -1,35 +1,11 @@
-You can create a domain class with the create-domain-class CLI command from the root of your project:
-
-[source, bash]
-----
-$ ./grailsw create-domain-class Book
-| Created grails-app/domain/demo/Book.groovy
-| Created src/test/groovy/demo/BookSpec.groovy
-----
-
-Define following properties in the domain class:
+You can create a domain class
 
 [source, groovy]
 .grails-app/domain/demo/Book.groovy
 ----
-include::{sourceDir}/grails-app/domain/demo/Book.groovy[lines=1..15]
-include::{sourceDir}/grails-app/domain/demo/Book.groovy[lines=21..28]
-----
-
-Generate scaffold service, controller and json-views  for `Book` domain by running following bash command:
-
-[source,bash]
-----
-./grailsw generate-all demo.Book
-| Rendered template Controller.groovy to destination grails-app/controllers/demo/BookController.groovy
-| Rendered template Service.groovy to destination grails-app/services/demo/BookService.groovy
-| Rendered template Spec.groovy to destination src/test/groovy/demo/BookControllerSpec.groovy
-| Rendered template ServiceSpec.groovy to destination src/integration-test/groovy/demo/BookServiceSpec.groovy
-| Scaffolding completed for grails-app/domain/demo/Book.groovy
-| Rendered template create.gsp to destination grails-app/views/book/create.gsp
-| Rendered template edit.gsp to destination grails-app/views/book/edit.gsp
-| Rendered template index.gsp to destination grails-app/views/book/index.gsp
-| Rendered template show.gsp to destination grails-app/views/book/show.gsp
-| Views generated for grails-app/domain/demo/Book.groovy
-
+include::{sourceDir}/grails-app/domain/demo/Book.groovy[tag=package]
+include::{sourceDir}/grails-app/domain/demo/Book.groovy[tag=importAndClass]
+include::{sourceDir}/grails-app/domain/demo/Book.groovy[tag=properties]
+include::{sourceDir}/grails-app/domain/demo/Book.groovy[tag=mapping]
+include::{sourceDir}/grails-app/domain/demo/Book.groovy[tag=closeClass]
 ----

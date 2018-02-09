@@ -3,8 +3,5 @@ Create some books by modifying the `BootStrap.groovy` as follows:
 [source, groovy]
 .grails-app/init/demo/BootStrap.groovy
 ----
-include::{sourceDir}/grails-app/init/demo/BootStrap.groovy[lines=1..9]
-include::{sourceDir}/grails-app/init/demo/BootStrap.groovy[lines=10..22]
-include::{sourceDir}/grails-app/init/demo/BootStrap.groovy[lines=66..66]
-include::{sourceDir}/grails-app/init/demo/BootStrap.groovy[lines=78..89]
+include::{sourceDir}/grails-app/init/demo/BootStrap.groovy[]
 ----

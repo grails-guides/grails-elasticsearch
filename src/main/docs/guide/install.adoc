@@ -3,7 +3,7 @@
 [source, groovy]
 .build.gradle
 ----
-include::{sourceDir}/build.gradle[lines=26..27]
+include::{sourceDir}/build.gradle[tag=elasticSearchVersion]
 ----
 <1> Define Elasticsearch version.
 
@@ -11,7 +11,7 @@ include::{sourceDir}/build.gradle[lines=26..27]
 
 [source, groovy, indent=0]
 ----
-include::{sourceDir}/build.gradle[lines=54..54]
+include::{sourceDir}/build.gradle[tag=elasticSearchPlugin]
 ----
 
 * In order to connect Application to Elasticsearch, define Elasticsearch plugin configurations in `application.yml` as follows:
@@ -19,7 +19,7 @@ include::{sourceDir}/build.gradle[lines=54..54]
 [source, groovy]
 .grails-app/conf/application.yml
 ----
-include::{sourceDir}/grails-app/conf/application.yml[lines=113..121]
+include::{sourceDir}/grails-app/conf/application.yml[tag=elasticSearchConfig]
 ----
 
 <1> Hibernate datastore implementation should be watched for storage events.

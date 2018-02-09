@@ -3,12 +3,17 @@ Implement a `search` action in `BookController.groovy` which will query Elastics
 [source, groovy]
 .grails-app/controllers/demo/BookController.groovy
 ----
-include::{sourceDir}/grails-app/controllers/demo/BookController.groovy[lines=1..24]
-include::{sourceDir}/grails-app/controllers/demo/BookController.groovy[lines=76..77]
+include::{sourceDir}/grails-app/controllers/demo/BookController.groovy[]
 ----
 
 <1> If no query string is passed to request than return  `Not Found(404)`.
 
-<2> Search through an index for the specified search query.
-
 <3> A `Map` containing a total entry, representing the total number of hits found, searchResults entry, containing the hits and a scores entry, containing the `hits` scores.
+
+Create a tests which verifies the controller only responds to HTTP GET requests. 
+
+[source, groovy]
+.src/test/groovy/demo/BookControllerSpec.groovy
+----
+include::{sourceDir}/src/test/groovy/demo/BookControllerSpec.groovy[]
+----

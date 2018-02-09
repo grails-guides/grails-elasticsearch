@@ -12,7 +12,9 @@ writing:
   logchanges: Elasticsearch logs
   domain: Create a Domain Class
   searchable: Mark Domain Searchable
+  gormDataService: Gorm Data Service
   bootstrap: Save Initial Data
+  service: Create Service
   controller: Create Controller
   jsonview: JSON View
   modifyUrlMappings: Modify UrlMapping

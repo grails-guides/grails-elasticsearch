@@ -7,6 +7,5 @@ Following is the functional tests for `search` action of `BookController.groovy`
 [source, groovy]
 .src/integration-test/groovy/demo/BookFunctionalSpec.groovy
 ----
-include::{sourceDir}/src/integration-test/groovy/demo/BookFunctionalSpec.groovy[indent=0, lines=1..43]
-include::{sourceDir}/src/integration-test/groovy/demo/BookFunctionalSpec.groovy[indent=0, lines=153..171]
+include::{sourceDir}/src/integration-test/groovy/demo/BookFunctionalSpec.groovy[]
 ----

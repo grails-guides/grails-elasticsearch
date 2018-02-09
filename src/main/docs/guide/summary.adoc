@@ -1,4 +1,4 @@
-During this guide, we learned how to configure Elasticserach Grails plugin. The plugin focus on exposing Grails domain classes for the moment. It highly takes the existing Searchable Plugin as reference for its syntax and behaviour.
+During this guide, we learned how to configure Elasticsearch Grails plugin. The plugin focus on exposing Grails domain classes for the moment. It highly takes the existing Searchable Plugin as reference for its syntax and behaviour.
 
 
 

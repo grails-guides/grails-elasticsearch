@@ -1,1 +1,16 @@
-TODO
+Create `BookSearchService.groovy` which queries Elasticsearch with the help of the https://noamt.github.io/elasticsearch-grails-plugin/snapshot/index.html[ElasticSearch Grails Plugin]. 
+
+
+[source, groovy]
+.grails-app/services/demo/BookSearchService.groovy
+----
+include::{sourceDir}/grails-app/services/demo/BookSearchService.groovy[]
+----
+
+<1> Search through an index for the specified search query.
+
+[source, groovy]
+.src/test/groovy/demo/BookSearchServiceSpec.groovy
+----
+include::{sourceDir}/src/test/groovy/demo/BookSearchServiceSpec.groovy[]
+----

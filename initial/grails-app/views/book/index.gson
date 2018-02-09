@@ -1,8 +1,0 @@
-import demo.Book
-
-model {
-	Iterable<Book> bookList
-}
-
-json tmpl.book(bookList ?: [])
-

@@ -1,7 +1,0 @@
-import demo.Book
-
-model {
-	Book book
-}
-
-json g.render(book, [resolveTemplate: false])

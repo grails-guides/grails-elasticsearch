@@ -109,13 +109,3 @@ environments:
                 testOnReturn: false
                 jdbcInterceptors: ConnectionState
                 defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED
----
-elasticSearch:
-    datastoreImpl: hibernateDatastore # <1>
-    client:
-        mode: transport # <2>
-        hosts:
-          - {host: 192.168.99.100, port: 9300} # <3>
-    cluster.name: elasticsearch # <4>
-    disableAutoIndex: false # <5>
-    bulkIndexOnStartup: true # <6>

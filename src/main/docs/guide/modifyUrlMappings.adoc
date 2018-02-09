@@ -1,0 +1,7 @@
+Modify `UrlMappings.groovy` by adding following to the end of `mappings` block:
+
+[source, groovy]
+.grails-app/controllers/demo/UrlMappings.groovy
+----
+include::{sourceDir}/grails-app/controllers/demo/UrlMappings.groovy[indent=0, lines=9..9]
+----

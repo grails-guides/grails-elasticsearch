@@ -15,11 +15,11 @@ class BookController {
     def search(String q) {
         log.error(q)
         if (!q) {
-            respond status: NOT_FOUND
+            respond status: NOT_FOUND // <1>
             return
         }
-        def result = elasticSearchService.search(q, [indices: Book, types: Book, score: true])
-        respond result
+        def result = elasticSearchService.search(q, [indices: Book, types: Book, score: true]) // <2>
+        respond result // <3>
     }
 
     def index(Integer max) {

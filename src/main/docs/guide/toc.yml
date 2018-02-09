@@ -11,10 +11,11 @@ writing:
   install: Configure ElasticSearch plugin
   logchanges: Elasticsearch logs
   domain: Create a Domain Class
+  searchable: Mark Domain Searchable
   bootstrap: Save Initial Data
-  service: Create Service
   controller: Create Controller
   jsonview: JSON View
+  modifyUrlMappings: Modify UrlMapping
   functionalTest: Functional Test
   summary: Summary
 helpWithGrails:

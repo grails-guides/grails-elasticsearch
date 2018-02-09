@@ -3,7 +3,8 @@ If you do not already have Docker installed, you’ll need to https://docs.docke
 Depending on your environment you may need to increase Docker’s available memory to 4GB or more.
 
 
-== Tip: Install Docker for Mac (If using Mac OS)
+TIP: Install Docker for Mac (If using Mac OS)
+
 
 * Make sure Docker machine is running by executing following command:
 [source, bash]

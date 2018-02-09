@@ -17,6 +17,7 @@ writing:
   jsonview: JSON View
   modifyUrlMappings: Modify UrlMapping
   functionalTest: Functional Test
-  summary: Summary
+summary: 
+  title: Summary
 helpWithGrails:
   title: Help with Grails  

@@ -6,9 +6,9 @@ Implement a `search` action in `BookController.groovy` which will query Elastics
 include::{sourceDir}/grails-app/controllers/demo/BookController.groovy[]
 ----
 
-<1> If no query string is passed to request than return  `Not Found(404)`.
+<1> If no query string is passed within the request then simply return  `Not Found(404)`.
 
-Create a tests which verifies the controller only responds to HTTP GET requests. 
+Create a test which verifies the controller only responds to HTTP GET requests.
 
 [source, groovy]
 .src/test/groovy/demo/BookControllerSpec.groovy

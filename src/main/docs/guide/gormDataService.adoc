@@ -1,4 +1,4 @@
-Create a http://gorm.grails.org/latest/hibernate/manual/index.html#dataServices[GORM Data Servie] to ease `Book` CRUD operations. 
+Create a http://gorm.grails.org/latest/hibernate/manual/index.html#dataServices[GORM Data Service] to simplify `Book` CRUD operations. 
 
 [source, groovy]
 .grails-app/services/demo/BookDataService.groovy

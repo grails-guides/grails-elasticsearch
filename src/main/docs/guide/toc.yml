@@ -1,6 +1,6 @@
 training:
   title: Training
-gettingStarted: 
+gettingStarted:
   title: Getting Started
   esfeatures: Features
   requirements: What will you need
@@ -12,14 +12,14 @@ writing:
   logchanges: Elasticsearch logs
   domain: Create a Domain Class
   searchable: Mark Domain Searchable
-  gormDataService: Gorm Data Service
+  gormDataService: GORM Data Service
   bootstrap: Save Initial Data
   service: Create Service
   controller: Create Controller
   jsonview: JSON View
   modifyUrlMappings: Modify UrlMapping
   functionalTest: Functional Test
-summary: 
+summary:
   title: Summary
 helpWithGrails:
-  title: Help with Grails  
+  title: Help with Grails

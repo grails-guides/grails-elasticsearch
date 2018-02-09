@@ -1,4 +1,4 @@
-Modify `UrlMappings.groovy` by adding following to the end of `mappings` block:
+Modify `UrlMappings.groovy` by adding the following to the end of the `mappings` block:
 
 [source, groovy]
 .grails-app/controllers/demo/UrlMappings.groovy

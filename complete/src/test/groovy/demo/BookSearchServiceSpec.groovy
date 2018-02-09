@@ -5,8 +5,9 @@ import grails.testing.services.ServiceUnitTest
 import spock.lang.Specification
 
 class BookSearchServiceSpec extends Specification implements ServiceUnitTest<BookSearchService> {
-    
+
     def "search uses indices and types `Book` and score `true`"() {
+
         service.elasticSearchService = Mock(ElasticSearchService)
 
         when:

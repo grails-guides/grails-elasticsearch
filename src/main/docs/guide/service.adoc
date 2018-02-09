@@ -9,6 +9,11 @@ include::{sourceDir}/grails-app/services/demo/BookSearchService.groovy[]
 
 <1> Search through an index for the specified search query.
 
+
+The service returns a `Map` containing a total entry, representing the total number of hits found, searchResults entry, containing the hits and a scores entry, containing the `hits` scores.
+
+Create a unit test to verify that the `elasticSearchService` is invoked once with the supplied `query` method argument.
+
 [source, groovy]
 .src/test/groovy/demo/BookSearchServiceSpec.groovy
 ----

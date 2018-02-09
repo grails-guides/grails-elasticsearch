@@ -8,8 +8,6 @@ include::{sourceDir}/grails-app/controllers/demo/BookController.groovy[]
 
 <1> If no query string is passed to request than return  `Not Found(404)`.
 
-<3> A `Map` containing a total entry, representing the total number of hits found, searchResults entry, containing the hits and a scores entry, containing the `hits` scores.
-
 Create a tests which verifies the controller only responds to HTTP GET requests. 
 
 [source, groovy]

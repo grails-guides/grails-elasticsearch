@@ -8,7 +8,12 @@ import spock.lang.IgnoreIf
 @Integration
 class BookControllerFunctionalSpec extends RestSpec {
 
+    BookDataService bookDataService
+
     void "Test the search action correctly searches"() {
+        expect:
+        bookDataService.count()
+
         when:
         RestResponse rsp = get("/book/search/Beckwith")
 

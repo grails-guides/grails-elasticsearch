@@ -7,4 +7,5 @@ import groovy.transform.CompileStatic
 @Service(Book)
 interface BookDataService {
     Book save(String title, String author, String about, String href)
+    Number count()
 }

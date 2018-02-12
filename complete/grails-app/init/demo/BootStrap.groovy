@@ -92,11 +92,8 @@ class BootStrap {
     BookDataService bookDataService
 
     def init = { servletContext ->
-        def targetDir = BuildSettings.TARGET_DIR
-        if (Environment.isDevelopmentMode() && targetDir != null) {
-            for (Map<String, String> bookInfo : (GRAILS_BOOKS + GROOVY_BOOKS)) {
-                bookDataService.save(bookInfo.title, bookInfo.author, bookInfo.about, bookInfo.href)
-            }
+        for (Map<String, String> bookInfo : (GRAILS_BOOKS + GROOVY_BOOKS)) {
+            bookDataService.save(bookInfo.title, bookInfo.author, bookInfo.about, bookInfo.href)
         }
     }
 }

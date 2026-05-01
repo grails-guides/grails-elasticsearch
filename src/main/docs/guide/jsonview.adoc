@@ -1,7 +1,0 @@
-Now create a view named `search` under `/views/book/search.gson` which will be used to display the resulting `JSON`.
-
-[soruce, groovy]
-.grails-app/views/book/search.gson
-----
-include::{sourceDir}/grails-app/views/book/search.gson[]
-----

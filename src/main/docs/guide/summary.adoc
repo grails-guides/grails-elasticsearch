@@ -1,5 +1,0 @@
-During this guide, we learned how to configure Elasticsearch Grails plugin. The plugin focus on exposing Grails domain classes for the moment. It highly takes the existing Searchable Plugin as reference for its syntax and behaviour.
-
-
-
-Please, refer to the https://noamt.github.io/elasticsearch-grails-plugin/[Grails Elasticsearch plugin’s documentation] to learn more.
